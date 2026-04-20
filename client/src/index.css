@@ -1,9 +1,17 @@
+/*
+Design reminder for this file:
+Swiss-modern industrial brochure style with warm white surfaces, charcoal typography,
+thin black dividers, restrained motion, and premium editorial spacing.
+Avoid generic centered landing-page patterns and preserve a precise, export-oriented tone.
+*/
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --font-display: "Manrope", "Noto Sans SC", sans-serif;
+  --font-sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -43,83 +51,113 @@
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
+  --primary: oklch(0.14 0 0);
+  --primary-foreground: oklch(0.98 0 0);
+  --sidebar-primary: oklch(0.14 0 0);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --chart-1: oklch(0.35 0 0);
+  --chart-2: oklch(0.48 0 0);
+  --chart-3: oklch(0.6 0 0);
+  --chart-4: oklch(0.75 0 0);
+  --chart-5: oklch(0.88 0 0);
+  --radius: 0rem;
+  --background: oklch(0.992 0.002 95);
+  --foreground: oklch(0.18 0.002 95);
+  --card: oklch(0.998 0.001 95);
+  --card-foreground: oklch(0.18 0.002 95);
+  --popover: oklch(0.998 0.001 95);
+  --popover-foreground: oklch(0.18 0.002 95);
+  --secondary: oklch(0.972 0.001 95);
+  --secondary-foreground: oklch(0.32 0.002 95);
+  --muted: oklch(0.965 0.001 95);
+  --muted-foreground: oklch(0.48 0.002 95);
+  --accent: oklch(0.95 0.001 95);
+  --accent-foreground: oklch(0.16 0.002 95);
+  --destructive: oklch(0.56 0.2 28);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.9 0.002 95);
+  --input: oklch(0.9 0.002 95);
+  --ring: oklch(0.18 0 0);
+  --sidebar: oklch(0.99 0.001 95);
+  --sidebar-foreground: oklch(0.18 0.002 95);
+  --sidebar-accent: oklch(0.95 0.001 95);
+  --sidebar-accent-foreground: oklch(0.16 0.002 95);
+  --sidebar-border: oklch(0.9 0.002 95);
+  --sidebar-ring: oklch(0.18 0 0);
 }
 
 .dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+  --primary: oklch(0.96 0 0);
+  --primary-foreground: oklch(0.14 0 0);
+  --sidebar-primary: oklch(0.96 0 0);
+  --sidebar-primary-foreground: oklch(0.14 0 0);
+  --background: oklch(0.14 0.002 95);
+  --foreground: oklch(0.94 0.002 95);
+  --card: oklch(0.18 0.002 95);
+  --card-foreground: oklch(0.94 0.002 95);
+  --popover: oklch(0.18 0.002 95);
+  --popover-foreground: oklch(0.94 0.002 95);
+  --secondary: oklch(0.22 0.002 95);
+  --secondary-foreground: oklch(0.86 0.002 95);
+  --muted: oklch(0.24 0.002 95);
+  --muted-foreground: oklch(0.72 0.002 95);
+  --accent: oklch(0.24 0.002 95);
+  --accent-foreground: oklch(0.96 0.002 95);
+  --destructive: oklch(0.67 0.18 27);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.94 0 0);
+  --chart-1: oklch(0.94 0 0);
+  --chart-2: oklch(0.78 0 0);
+  --chart-3: oklch(0.62 0 0);
+  --chart-4: oklch(0.44 0 0);
+  --chart-5: oklch(0.28 0 0);
+  --sidebar: oklch(0.16 0.002 95);
+  --sidebar-foreground: oklch(0.94 0.002 95);
+  --sidebar-accent: oklch(0.24 0.002 95);
+  --sidebar-accent-foreground: oklch(0.96 0.002 95);
+  --sidebar-border: oklch(1 0 0 / 12%);
+  --sidebar-ring: oklch(0.94 0 0);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    background-image:
+      linear-gradient(to right, rgba(0, 0, 0, 0.018) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.018) 1px, transparent 1px);
+    background-size: 36px 36px;
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+  }
+
+  img {
+    display: block;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
   [type="button"]:not(:disabled),
@@ -134,24 +172,11 @@
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 
@@ -160,18 +185,142 @@
     min-width: 0;
   }
 
+  .section-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgb(0 0 0 / 0.46);
+  }
+
+  .section-title {
+    font-size: clamp(2.3rem, 5vw, 4.25rem);
+    line-height: 0.96;
+    letter-spacing: -0.05em;
+    font-weight: 600;
+    color: rgb(0 0 0 / 0.96);
+  }
+
+  .section-frame {
+    position: relative;
+  }
+
+  .section-frame::before {
+    content: "";
+    position: absolute;
+    left: max(1rem, calc((100vw - 1280px) / 2 + 1rem));
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgb(0 0 0 / 0.05);
+    pointer-events: none;
+  }
+
+  .contact-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: start;
+    border: 1px solid rgb(0 0 0 / 0.08);
+    background: white;
+    padding: 1.25rem;
+  }
+
+  .contact-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: rgb(0 0 0 / 0.44);
+  }
+
+  .contact-value,
+  .contact-link {
+    margin-top: 0.6rem;
+    display: block;
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: rgb(0 0 0 / 0.82);
+    transition: color 300ms ease;
+  }
+
+  .contact-link:hover {
+    color: black;
+  }
+
+  .hero-grid::after {
+    content: "";
+    position: absolute;
+    right: 8%;
+    top: 10%;
+    width: 20vw;
+    min-width: 180px;
+    max-width: 320px;
+    height: 1px;
+    background: rgb(0 0 0 / 0.12);
+    transform: rotate(-35deg);
+    transform-origin: right center;
+    pointer-events: none;
+  }
+
+  .hero-visual::before {
+    content: "";
+    position: absolute;
+    inset: auto auto -18px -18px;
+    width: 60%;
+    height: 55%;
+    border: 1px solid rgb(0 0 0 / 0.08);
+    pointer-events: none;
+  }
+
+  .animate-rise {
+    animation: rise 0.8s cubic-bezier(0.2, 1, 0.22, 1) both;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s cubic-bezier(0.2, 1, 0.22, 1) both;
+  }
+
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
+      padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      max-width: 1280px;
     }
+  }
+
+  @media (max-width: 1023px) {
+    .section-frame::before,
+    .hero-grid::after,
+    .hero-visual::before {
+      display: none;
+    }
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
